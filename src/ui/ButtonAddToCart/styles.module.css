@@ -1,0 +1,22 @@
+.button {
+  display: flex;
+  align-items: center;
+  color: #eb5a1e;
+  background-color: white;
+  padding: 12px 18px 12px 18px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid #eb5a1e;
+  border-radius: 30px;
+  gap: 7px;
+  transition-duration: 0.2s;
+
+  &:hover {
+    color: white;
+    background-color: #eb5a1e;
+  }
+}
+
+.icon {
+  fill: currentColor;
+}
