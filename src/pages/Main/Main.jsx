@@ -1,4 +1,10 @@
+import Categories from '../../components/Categories/Categories'
+
 const Main = () => {
-  return <main>fja;df</main>
+  return (
+    <main>
+      <Categories />
+    </main>
+  )
 }
 export default Main
