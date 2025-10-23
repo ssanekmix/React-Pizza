@@ -1,8 +1,18 @@
 import styles from './styles.module.css'
 
-const CategoryButton = ({ title, isActive }) => {
+const CategoryButton = ({
+  title,
+  activeCategory,
+  categoryIndex,
+  setActiveCategory,
+}) => {
   return (
-    <li className={`${styles.listItem} ${isActive && styles.active}`}>
+    <li
+      className={`${styles.listItem} ${
+        categoryIndex === activeCategory && styles.active
+      }`}
+      onClick={() => setActiveCategory(categoryIndex)}
+    >
       {title}
     </li>
   )
