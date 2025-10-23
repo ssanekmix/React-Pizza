@@ -12,3 +12,7 @@ select,
 label {
   font-family: 'Proxima Nova', sans-serif;
 }
+
+li {
+  list-style: none;
+}
