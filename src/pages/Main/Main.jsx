@@ -1,4 +1,10 @@
+import FiltersBar from '../../components/FiltersBar/FiltersBar'
+
 const Main = () => {
-  return <main>fja;df</main>
+  return (
+    <main>
+      <FiltersBar />
+    </main>
+  )
 }
 export default Main
