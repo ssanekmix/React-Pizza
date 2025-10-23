@@ -1,11 +1,9 @@
-import Categories from '../../components/Categories/Categories'
-import Sort from '../../components/Sort/Sort'
+import FiltersBar from '../../components/FiltersBar/FiltersBar'
 
 const Main = () => {
   return (
     <main>
-      <Categories />
-      <Sort />
+      <FiltersBar />
     </main>
   )
 }

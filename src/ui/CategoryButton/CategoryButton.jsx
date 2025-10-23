@@ -1,6 +1,10 @@
 import styles from './styles.module.css'
 
-const CategoryButton = ({ title }) => {
-  return <li className={`${styles.listItem} ${styles.active}`}>{title}</li>
+const CategoryButton = ({ title, isActive }) => {
+  return (
+    <li className={`${styles.listItem} ${isActive && styles.active}`}>
+      {title}
+    </li>
+  )
 }
 export default CategoryButton

@@ -1,5 +1,14 @@
 import styles from './styles.module.css'
 
+const categories = [
+  'Все',
+  'Мясные',
+  'Вегетарианская',
+  'Гриль',
+  'Острые',
+  'Закрытые',
+]
+
 const Categories = () => {
   return (
     <nav>
