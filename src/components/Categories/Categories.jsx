@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import CategoryButton from '../../ui/CategoryButton/CategoryButton'
 import styles from './styles.module.css'
 
@@ -11,9 +10,7 @@ const categories = [
   'Закрытые',
 ]
 
-const Categories = () => {
-  const [activeCategory, setActiveCategory] = useState(0)
-
+const Categories = ({ selectedCategory, onCategoryChange }) => {
   return (
     <nav>
       <ul className={styles.list}>
@@ -22,8 +19,8 @@ const Categories = () => {
             key={index}
             title={category}
             categoryIndex={index}
-            activeCategory={activeCategory}
-            setActiveCategory={setActiveCategory}
+            selectedCategory={selectedCategory}
+            onCategoryChange={onCategoryChange}
           />
         ))}
       </ul>
