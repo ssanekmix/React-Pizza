@@ -1,0 +1,44 @@
+.cartItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 30px;
+  gap: 120px;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #d7d7d7;
+    padding-bottom: 30px;
+  }
+}
+
+.image {
+  width: 80px;
+}
+.info {
+  display: flex;
+  gap: 15px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.doughInfo {
+  margin-top: 3px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #8d8d8d;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 93px;
+}

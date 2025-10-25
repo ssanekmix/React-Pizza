@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f6f6f6;
+  width: 100%;
+  padding-bottom: 30px;
+  max-width: 824px;
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #000000;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.cartIcon {
+  width: 29px;
+  height: 29px;
+}
