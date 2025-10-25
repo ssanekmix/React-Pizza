@@ -1,16 +1,18 @@
 import { useState } from 'react'
 import sortIcon from '../../assets/icons/sort-icon.svg'
+import { SORT_NAMES as sortNames } from '../../constants/sortNames'
 import styles from './styles.module.css'
 
-const sortNames = ['популярности', 'по цене', 'по алфавиту']
-
-const Sort = () => {
+const Sort = ({
+  selectedSortName,
+  setSelectedSortName,
+  sortOrder,
+  setSortOrder,
+}) => {
   const [isSortSelectorOpen, setIsSortSelectorOpen] = useState(false)
-  const [selectedSort, setSelectedSort] = useState(0)
-  const [sortOrder, setSortOrder] = useState('asc')
 
-  const handleSelect = (sortIndex) => {
-    setSelectedSort(sortIndex)
+  const handleSelect = (sortName) => {
+    setSelectedSortName(sortName)
     setIsSortSelectorOpen(false)
   }
 
@@ -41,7 +43,7 @@ const Sort = () => {
           className={styles.sortName}
           onMouseEnter={() => setIsSortSelectorOpen(true)}
         >
-          {sortNames[selectedSort]}
+          {selectedSortName}
         </span>
       </div>
       <ul
@@ -49,13 +51,13 @@ const Sort = () => {
           isSortSelectorOpen && styles.sortSelectorOpen
         }`}
       >
-        {sortNames.map((name, index) => (
+        {sortNames.map((name) => (
           <li
             className={`${styles.sortSelectorItem} ${
-              selectedSort === index && styles.active
+              selectedSortName === name && styles.active
             }`}
             key={name}
-            onClick={() => handleSelect(index)}
+            onClick={() => handleSelect(name)}
           >
             {name}
           </li>

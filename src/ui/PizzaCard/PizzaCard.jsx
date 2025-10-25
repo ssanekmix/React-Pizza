@@ -1,15 +1,18 @@
+import { useState } from 'react'
+import { DOUGH_OPTIONS as doughOptions } from '../../constants/doughOptions'
+import { DOUGH_SIZE_OPTIONS as doughSizeOptions } from '../../constants/doughSizeOptions'
 import calculatePizzaPrice from '../../helpers/calculatePizzaPrice'
 import ButtonAddToCart from '../ButtonAddToCart/ButtonAddToCart'
 import OptionsGroup from '../OptionsGroup/OptionsGroup'
 import styles from './styles.module.css'
 
-const doughOptions = ['тонкое', 'традиционное']
-const doughSizeOptions = ['26 см.', '30 см.', '40 см.']
-
 const PizzaCard = ({ pizza }) => {
+  const [selectedDoughIndex, setSelectedDoughIndex] = useState(0)
+  const [selectedDoughSizeIndex, setSelectedDoughSizeIndex] = useState(0)
+
   return (
-    <article className={styles.card}>
-      <li>
+    <li className={styles.card}>
+      <article>
         <img
           className={styles.image}
           src={pizza.imageUrl}
@@ -17,17 +20,25 @@ const PizzaCard = ({ pizza }) => {
         />
         <h3 className={styles.title}>{pizza.title}</h3>
         <div className={styles.optionsWrapper}>
-          <OptionsGroup options={doughOptions} />
-          <OptionsGroup options={doughSizeOptions} />
+          <OptionsGroup
+            selectedOption={selectedDoughIndex}
+            setSelectedOption={setSelectedDoughIndex}
+            options={doughOptions}
+          />
+          <OptionsGroup
+            selectedOption={selectedDoughSizeIndex}
+            setSelectedOption={setSelectedDoughSizeIndex}
+            options={doughSizeOptions}
+          />
         </div>
         <div className={styles.priceActionContainer}>
           <div className={styles.price}>
-            от {calculatePizzaPrice(pizza.price)} ₽
+            {calculatePizzaPrice(pizza.price, selectedDoughSizeIndex)}
           </div>
           <ButtonAddToCart />
         </div>
-      </li>
-    </article>
+      </article>
+    </li>
   )
 }
 export default PizzaCard
