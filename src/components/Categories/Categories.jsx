@@ -1,14 +1,6 @@
+import { CATEGORIES as categories } from '../../constants/categories'
 import CategoryButton from '../../ui/CategoryButton/CategoryButton'
 import styles from './styles.module.css'
-
-const categories = [
-  'Все',
-  'Мясные',
-  'Вегетарианская',
-  'Гриль',
-  'Острые',
-  'Закрытые',
-]
 
 const Categories = ({ selectedCategory, onCategoryChange }) => {
   return (

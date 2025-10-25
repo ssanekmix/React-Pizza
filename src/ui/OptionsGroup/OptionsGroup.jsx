@@ -1,17 +1,14 @@
-import { useState } from 'react'
 import styles from './styles.module.css'
 
-const OptionsGroup = ({ options }) => {
-  const [activeOptionBtn, setActiveOptionBtn] = useState(0)
-
+const OptionsGroup = ({ selectedOption, setSelectedOption, options }) => {
   return (
     <div className={styles.optionGroup}>
       {options.map((option, index) => (
         <button
-          key={index}
-          onClick={() => setActiveOptionBtn(index)}
+          key={option}
+          onClick={() => setSelectedOption(index)}
           className={`${styles.optionBtn} ${
-            index === activeOptionBtn && styles.activeOption
+            index === selectedOption && styles.activeOption
           }`}
         >
           {option}
