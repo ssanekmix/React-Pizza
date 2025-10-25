@@ -1,0 +1,68 @@
+.sort {
+  display: flex;
+  position: relative;
+  margin-right: 47px;
+  padding-top: 53px;
+}
+
+.text {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.sortIcon {
+  cursor: pointer;
+  margin-right: 6px;
+}
+
+.sortIconDesc {
+  transform: rotate(180deg);
+}
+
+.sortTitle {
+  cursor: pointer;
+  user-select: none;
+}
+
+.sortName {
+  color: #fe5f1e;
+  border-bottom: 1px dashed #fe5f1e;
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+
+.sortSelector {
+  position: absolute;
+  top: 100%;
+  right: 0%;
+  transform: translateY(15px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out,
+    visibility 0.3s;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10;
+  padding-block: 13px;
+  border-radius: 10px;
+}
+
+.sortSelectorOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.sortSelectorItem {
+  padding: 10px 22px 10px 14px;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 600;
+
+  &:hover {
+    background-color: rgba(254, 95, 30, 0.05);
+  }
+}
+
+.active {
+  color: #fe5f1e;
+}
