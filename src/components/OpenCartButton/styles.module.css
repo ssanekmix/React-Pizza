@@ -24,3 +24,7 @@
 .cart {
   margin-right: 8px;
 }
+
+.cartAtRight {
+  margin-right: 0px;
+}

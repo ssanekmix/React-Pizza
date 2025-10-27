@@ -8,7 +8,7 @@ function App() {
   const { data: pizzaData, isLoading } = usePizzaData()
 
   return (
-    <CartProvider>
+    <CartProvider pizzaData={pizzaData}>
       <FiltersBarProvider>
         <Pages pizzaData={pizzaData} isLoading={isLoading} />
       </FiltersBarProvider>

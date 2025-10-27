@@ -1,8 +1,8 @@
 import styles from './styles.module.css'
 
-const ClearCartButton = () => {
+const ClearCartButton = ({ onBtnClearCartClick }) => {
   return (
-    <button className={styles.delete}>
+    <button className={styles.delete} onClick={onBtnClearCartClick}>
       <svg
         className={styles.deleteIcon}
         width="20"

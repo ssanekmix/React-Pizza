@@ -1,13 +1,12 @@
 import CartPizzaItem from './../CartPizzaItem/CartPizzaItem'
 import styles from './styles.module.css'
 
-const CartPizzaList = () => {
+const CartPizzaList = ({ pizzaData }) => {
   return (
     <ul className={styles.cartList}>
-      <CartPizzaItem />
-      <CartPizzaItem />
-      <CartPizzaItem />
-      <CartPizzaItem />
+      {pizzaData.map((pizza, index) => (
+        <CartPizzaItem key={index} pizza={pizza} />
+      ))}
     </ul>
   )
 }
