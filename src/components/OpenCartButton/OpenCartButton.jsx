@@ -1,8 +1,15 @@
+import { useNavigate } from 'react-router'
 import styles from './styles.module.css'
 
 const CartButton = () => {
+  const navigate = useNavigate()
+
+  const goToCart = () => {
+    navigate('/cart')
+  }
+
   return (
-    <button className={styles.button}>
+    <button className={styles.button} onClick={goToCart}>
       <span className={styles.price}>520 ₽</span>
       <span>
         <svg
