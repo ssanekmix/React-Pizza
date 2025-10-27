@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  min-width: fit-content;
 }
 
 .button {
@@ -54,7 +55,24 @@
   }
 }
 
+.buttonIsDisabled {
+  cursor: not-allowed;
+}
+
+.buttonIsDisabled:hover {
+  background-color: transparent;
+}
+.buttonIsDisabled:hover::before,
+.buttonIsDisabled:hover::after {
+  background-color: #fe5f1e;
+  border-color: #fe5f1e;
+}
+
 .count {
   font-size: 22px;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
 }

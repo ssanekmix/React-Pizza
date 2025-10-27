@@ -10,6 +10,9 @@ const PizzaCard = ({ pizza }) => {
   const [selectedDoughIndex, setSelectedDoughIndex] = useState(0)
   const [selectedDoughSizeIndex, setSelectedDoughSizeIndex] = useState(0)
 
+  const pizzaPrice = calculatePizzaPrice(pizza.price, selectedDoughSizeIndex)
+  const pizzaPriceParseNumber = parseInt(pizzaPrice.replace(/\D/g, ''))
+
   return (
     <li className={styles.card}>
       <article>
@@ -32,10 +35,13 @@ const PizzaCard = ({ pizza }) => {
           />
         </div>
         <div className={styles.priceActionContainer}>
-          <div className={styles.price}>
-            {calculatePizzaPrice(pizza.price, selectedDoughSizeIndex)}
-          </div>
-          <ButtonAddToCart />
+          <div className={styles.price}>{pizzaPrice}</div>
+          <ButtonAddToCart
+            pizza={pizza}
+            selectedDough={doughOptions[selectedDoughIndex]}
+            selectedDoughSize={doughSizeOptions[selectedDoughSizeIndex]}
+            pizzaPrice={pizzaPriceParseNumber}
+          />
         </div>
       </article>
     </li>

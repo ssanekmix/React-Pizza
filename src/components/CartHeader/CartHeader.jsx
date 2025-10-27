@@ -1,7 +1,10 @@
+import { useCartState } from '../../hooks/useCartState'
 import ClearCartButton from '../ClearCartButton/ClearCartButton'
 import styles from './styles.module.css'
 
 const CartHeader = () => {
+  const { clearCart } = useCartState()
+
   return (
     <header className={styles.header}>
       <div className={styles.cart}>
@@ -17,7 +20,7 @@ const CartHeader = () => {
         </svg>
         <h2 className={styles.title}>Корзина</h2>
       </div>
-      <ClearCartButton />
+      <ClearCartButton onBtnClearCartClick={clearCart} />
     </header>
   )
 }

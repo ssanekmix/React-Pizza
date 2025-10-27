@@ -1,9 +1,16 @@
+import { useNavigate } from 'react-router-dom'
 import styles from './styles.module.css'
 
 const CartFooterActions = () => {
+  const navigate = useNavigate()
+
+  const goToMain = () => {
+    navigate('/')
+  }
+
   return (
     <div className={styles.footerActions}>
-      <button className={styles.buttonGoBack}>
+      <button className={styles.buttonGoBack} onClick={goToMain}>
         <svg
           className={styles.icon}
           width="8"
