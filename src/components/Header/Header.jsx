@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import CartButton from '../CartButton/CartButton'
+import OpenCartButton from '../OpenCartButton/OpenCartButton'
 import styles from './styles.module.css'
 
-const Header = () => {
+const Header = ({ isOnMainPage }) => {
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const Header = () => {
           <div className={styles.descr}>самая вкусная пицца во вселенной</div>
         </div>
       </div>
-      <CartButton />
+      {isOnMainPage && <OpenCartButton />}
     </header>
   )
 }
