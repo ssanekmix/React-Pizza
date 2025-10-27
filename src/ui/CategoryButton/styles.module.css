@@ -1,11 +1,11 @@
 .listItem {
   background-color: #f9f9f9;
   padding: 14px 35px;
+  border: none;
   border-radius: 30px;
   color: #2c2c2c;
   font-size: 16px;
   font-weight: bold;
-  cursor: pointer;
   transition-duration: 0.2s;
 
   &:hover {

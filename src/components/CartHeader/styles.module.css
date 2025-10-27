@@ -2,10 +2,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #f6f6f6;
-  width: 100%;
+  border-bottom: 1px solid #d7d7d7;
   padding-bottom: 30px;
-  max-width: 824px;
+  width: 100%;
 }
 
 .cart {

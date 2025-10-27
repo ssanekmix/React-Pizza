@@ -7,13 +7,14 @@ const CategoryButton = ({
   onCategoryChange,
 }) => {
   return (
-    <li
-      className={`${styles.listItem} ${
-        categoryIndex === selectedCategory && styles.active
-      }`}
-      onClick={() => onCategoryChange(categoryIndex)}
-    >
-      {title}
+    <li onClick={() => onCategoryChange(categoryIndex)}>
+      <button
+        className={`${styles.listItem} ${
+          categoryIndex === selectedCategory && styles.active
+        }`}
+      >
+        {title}
+      </button>
     </li>
   )
 }
