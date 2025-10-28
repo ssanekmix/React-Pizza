@@ -6,52 +6,6 @@
   margin-top: 40px;
 }
 
-.buttonGoBack {
-  height: 55px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  border: 1px solid #7e7e7e;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: 500;
-  padding: 15px 25px;
-  color: #7e7e7e;
-  background-color: transparent;
-  transition: color 0.3s ease, border-color 0.3s ease;
-
-  &:hover {
-    color: black;
-    border-color: black;
-
-    .icon {
-      animation: iconMove 0.5s ease-in-out;
-    }
-  }
-}
-
-.icon {
-  transition: transform 0.4s ease, color 0.3s ease-in-out;
-}
-
-@keyframes iconMove {
-  0% {
-    translate: 0;
-  }
-  25% {
-    translate: -5px;
-  }
-  50% {
-    translate: -8px;
-  }
-  75% {
-    translate: -5px;
-  }
-  100% {
-    translate: 0px;
-  }
-}
-
 .buttonBuyNow {
   height: 55px;
   background-color: #fe5f1e;
