@@ -2,7 +2,7 @@ import FiltersBar from '../../components/FiltersBar/FiltersBar'
 import { useFilters } from '../../hooks/useFilters'
 import PizzaList from '../../ui/PizzaList/PizzaList'
 
-const Main = ({ pizzaData }) => {
+const Main = ({ pizzaData, isLoading }) => {
   const { selectedCategory, selectedSortName, sortOrder } = useFilters()
 
   const filteredPizzas =
@@ -24,7 +24,7 @@ const Main = ({ pizzaData }) => {
   return (
     <main>
       <FiltersBar />
-      <PizzaList pizzaData={sortedPizzas} />
+      <PizzaList pizzaData={sortedPizzas} isLoading={isLoading} />
     </main>
   )
 }
