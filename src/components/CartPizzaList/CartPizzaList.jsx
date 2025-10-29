@@ -4,8 +4,11 @@ import styles from './styles.module.css'
 const CartPizzaList = ({ pizzaData }) => {
   return (
     <ul className={styles.cartList}>
-      {pizzaData.map((pizza, index) => (
-        <CartPizzaItem key={index} pizza={pizza} />
+      {pizzaData.map((pizza) => (
+        <CartPizzaItem
+          key={`${pizza.title}_${pizza.dough}_${[pizza.doughSize]}`}
+          pizza={pizza}
+        />
       ))}
     </ul>
   )

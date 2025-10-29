@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { calculateTotalPrice } from '../../helpers/calculateTotalPrice'
+import { usePizzaData } from '../../hooks/usePizzaData'
 import { findPizzaInCart } from './../../helpers/findPizzaInCart'
 import { CartContext } from './CartContext'
 
-export const CartProvider = ({ children, pizzaData }) => {
+export const CartProvider = ({ children }) => {
+  const { data: pizzaData } = usePizzaData()
   const [selectedPizzas, setSelectedPizzas] = useState([])
 
   const totalPizzaCount = selectedPizzas.reduce(

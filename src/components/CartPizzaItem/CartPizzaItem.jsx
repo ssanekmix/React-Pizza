@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useCartState } from '../../hooks/useCartState'
 import CartItemRemoveButton from '../CartItemRemoveButton/CartItemRemoveButton'
 import { calculateTotalPrice } from './../../helpers/calculateTotalPrice'
@@ -7,19 +7,9 @@ import CartPizzaImageSkeleton from './../Skeletons/CartPizzaImageSkeleton'
 import styles from './styles.module.css'
 
 const CartPizzaItem = ({ pizza }) => {
-  const [count, setCount] = useState(0)
   const [imageLoaded, setImageLoaded] = useState(false)
 
   const { removePizza, updatePizzaCount } = useCartState()
-
-  useEffect(() => {
-    setCount(pizza.count)
-  }, [pizza.count])
-
-  const handleCountChange = (newCount) => {
-    setCount(newCount)
-    updatePizzaCount(pizza, newCount)
-  }
 
   return (
     <li className={styles.cartItem}>
@@ -40,9 +30,12 @@ const CartPizzaItem = ({ pizza }) => {
         </div>
       </div>
       <div className={styles.actions}>
-        <QuantityControl count={count} onChange={handleCountChange} />
+        <QuantityControl
+          count={pizza.count}
+          onChange={(newCount) => updatePizzaCount(pizza, newCount)}
+        />
         <span className={styles.title}>
-          {calculateTotalPrice(pizza.price, count)} ₽
+          {calculateTotalPrice(pizza.price, pizza.count)} ₽
         </span>
         <CartItemRemoveButton onRemoveBtnClick={() => removePizza(pizza)} />
       </div>

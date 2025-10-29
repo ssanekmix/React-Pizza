@@ -1,3 +1,4 @@
+import { useCallback, useMemo } from 'react'
 import PizzaOrderCount from '../../components/PizzaOrderCount/PizzaOrderCount'
 import { findPizzaInCart } from '../../helpers/findPizzaInCart'
 import { useCartState } from '../../hooks/useCartState'
@@ -11,16 +12,18 @@ const ButtonAddToCart = ({
 }) => {
   const { selectedPizzas, addPizza } = useCartState()
 
-  const pizzaIndex = findPizzaInCart(selectedPizzas, {
-    title: pizza.title,
-    dough: selectedDough,
-    doughSize: selectedDoughSize,
-  })
-  const currentCount = pizzaIndex !== -1 ? selectedPizzas[pizzaIndex].count : 0
+  const currentCount = useMemo(() => {
+    const index = findPizzaInCart(selectedPizzas, {
+      title: pizza.title,
+      dough: selectedDough,
+      doughSize: selectedDoughSize,
+    })
+    return index !== -1 ? selectedPizzas[index].count : 0
+  }, [selectedPizzas, pizza.title, selectedDough, selectedDoughSize])
 
-  const onBtnAddToCartClick = () => {
+  const onBtnAddToCartClick = useCallback(() => {
     addPizza(pizza.id, selectedDough, selectedDoughSize, pizzaPrice)
-  }
+  }, [addPizza, pizza.id, selectedDough, selectedDoughSize, pizzaPrice])
 
   return (
     <button className={styles.button} onClick={onBtnAddToCartClick}>

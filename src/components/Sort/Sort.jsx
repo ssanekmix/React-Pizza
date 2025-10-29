@@ -1,6 +1,6 @@
-import { useState } from 'react'
 import sortIcon from '../../assets/icons/sort-icon.svg'
 import { SORT_NAMES as sortNames } from '../../constants/sortNames'
+import { useToggle } from '../../hooks/useToggle'
 import styles from './styles.module.css'
 
 const Sort = ({
@@ -9,11 +9,11 @@ const Sort = ({
   sortOrder,
   setSortOrder,
 }) => {
-  const [isSortSelectorOpen, setIsSortSelectorOpen] = useState(false)
+  const [isSortSelectorOpen, toggleOpenSortSelector] = useToggle(false)
 
   const handleSelect = (sortName) => {
     setSelectedSortName(sortName)
-    setIsSortSelectorOpen(false)
+    toggleOpenSortSelector()
   }
 
   const handleSortOrder = () => {
@@ -23,7 +23,9 @@ const Sort = ({
   return (
     <div
       className={styles.sort}
-      onMouseLeave={() => setIsSortSelectorOpen(false)}
+      onMouseLeave={() => {
+        if (isSortSelectorOpen) toggleOpenSortSelector()
+      }}
     >
       <img
         className={`${styles.sortIcon} ${
@@ -39,10 +41,7 @@ const Sort = ({
         <span className={styles.sortTitle} onClick={handleSortOrder}>
           Сортировка по:{' '}
         </span>
-        <span
-          className={styles.sortName}
-          onMouseEnter={() => setIsSortSelectorOpen(true)}
-        >
+        <span className={styles.sortName} onMouseEnter={toggleOpenSortSelector}>
           {selectedSortName}
         </span>
       </div>

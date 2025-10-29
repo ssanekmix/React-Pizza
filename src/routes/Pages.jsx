@@ -3,14 +3,11 @@ import Layout from '../components/Layout/Layout'
 import Main from '../pages/Main/Main'
 import Cart from './../pages/Cart/Cart'
 
-function Pages({ pizzaData, isLoading }) {
+function Pages() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route
-          index
-          element={<Main pizzaData={pizzaData} isLoading={isLoading} />}
-        />
+        <Route index element={<Main />} />
         <Route path="cart" element={<Cart />} />
       </Route>
     </Routes>
