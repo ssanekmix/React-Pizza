@@ -1,8 +1,17 @@
 .header {
+  position: sticky;
   display: flex;
   justify-content: space-between;
-  padding: 49px 38px 40px 77px;
-  border-bottom: 1px solid #f6f6f6;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  padding: 30px 38px 30px 77px;
+  border-bottom: 1px solid #d7d7d7;
+  z-index: 10;
+}
+
+.scrolled {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .logo {

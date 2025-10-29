@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #d7d7d7;
+  padding-bottom: 30px;
+  width: 100%;
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #000000;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.cartIcon {
+  width: 29px;
+  height: 29px;
+}

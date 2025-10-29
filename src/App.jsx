@@ -1,13 +1,15 @@
 import './App.css'
-import Header from './components/Header/Header'
-import Main from './pages/Main/Main'
+import { CartProvider } from './context/CartContext/CartProvider'
+import { FiltersBarProvider } from './context/FiltersBarContext/FiltersBarProvider'
+import Pages from './routes/Pages'
 
 function App() {
   return (
-    <>
-      <Header />
-      <Main />
-    </>
+    <CartProvider>
+      <FiltersBarProvider>
+        <Pages />
+      </FiltersBarProvider>
+    </CartProvider>
   )
 }
 

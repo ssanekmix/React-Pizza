@@ -1,0 +1,15 @@
+.delete {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: #b6b6b6;
+  transition-duration: 0.2s;
+
+  &:hover {
+    color: #fe5f1e;
+  }
+}
